@@ -1,4 +1,4 @@
-def split_before_each_uppercases(formula):
+def split_before_each_uppercases(formula: str) -> list[str]:
     start = 0
     split_formula = []
 
