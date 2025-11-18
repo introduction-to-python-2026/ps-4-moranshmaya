@@ -27,15 +27,20 @@ def split_at_first_digit(formula: str):
     return prefix, number_part
 
 
-def split_before_each_uppercase(formula: str) -> list[str]:
+from typing import List
+
+def split_before_each_uppercases(formula: str) -> List[str]:
+    """מפצל מחרוזת לפי אותיות גדולות, למשל 'NaClH2O' -> ['Na', 'Cl', 'H2O']"""
     if not formula:
         return []
 
     start = 0
-    split_formula = []
+    split_formula: List[str] = []
 
     for i in range(1, len(formula)):
-        if formula[i].isupper():
+        ch = formula[i]
+
+        if ch.isupper():
             split_formula.append(formula[start:i])
             start = i
 
